@@ -12,18 +12,22 @@ const pool = mysql.createPool({
 app.listen(PORT, () => console.log("listen on 8080"));
 
 app.get("/donations", (req, res) => {
-  pool.getConnection((err, connection) => {
-    if (err) throw err;
+//   pool.getConnection((err, connection) => {
+//     if (err) throw err;
 
-    connection.query("SELECT * from donate", (err, rows) => {
-      connection.release();
-      if (!err) {
-        res.send(rows);
-      } else {
-        console.log(err);
-      }
-    });
-  });
+//     connection.query("SELECT * from donate", (err, rows) => {
+//       connection.release();
+//       if (!err) {
+//         res.send(rows);
+//       } else {
+//         console.log(err);
+//       }
+//     });
+//   });
+    res.status(200).send({
+        _id:'001',
+        
+    })
 });
 
 
